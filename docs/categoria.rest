@@ -1,0 +1,23 @@
+GET  http://localhost:3000/categorias
+
+###
+POST http://localhost:3000/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Decoraciones"
+}
+
+###
+GET http://localhost:3000/categorias/2
+
+###
+PATCH http://localhost:3000/categorias/4
+Content-Type: application/json
+
+{
+  "nombre": "Bocaditos"
+}
+
+###
+DELETE http://localhost:3000/categorias/4

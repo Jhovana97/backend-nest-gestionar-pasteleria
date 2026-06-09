@@ -1,0 +1,40 @@
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+//HABILITA CONFIGURACION .ENV
+import { ConfigModule } from '@nestjs/config';
+//HABILITA CONEXION A BASE DE DATOS
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './modules/user/user.module';
+import { CategoriasModule } from './modules/categorias/categorias.module';
+import { ProductosModule } from './modules/productos/productos.module';
+import { ClientesModule } from './modules/clientes/clientes.module';
+import { PedidosModule } from './modules/pedidos/pedidos.module';
+import { PagosModule } from './modules/pagos/pagos.module';
+import { AuthModule } from './modules/auth/auth.module';
+
+
+@Module({
+  imports: [ConfigModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: '123456',
+      database: 'sistema-gestion-pedidos-resposteria',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),
+    UserModule,
+    CategoriasModule,
+    ProductosModule,
+    ClientesModule,
+    PedidosModule,
+    PagosModule,
+    AuthModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}

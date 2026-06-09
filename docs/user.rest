@@ -1,0 +1,28 @@
+GET  http://localhost:3000/user
+Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTc4MTAxNjY2MCwiZXhwIjoxNzgxMDIwMjYwfQ.TvG7HFGP2DP1PKRfQ94VfDwmhOFD3qdwpDs17a6tsy8",
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "nombre": "admindasdas",
+  "email": "admindasdas@gmail.com",
+  "password": "12345678"
+}
+
+####
+GET http://localhost:3000/user/1
+
+###
+PATCH http://localhost:3000/user/2
+Content-Type: application/json
+
+{
+  "nombre": "jhovana alejo",
+  "email": "jhovi@gmail.com",
+  "password": "1234567810"
+}
+
+####
+DELETE http://localhost:3000/user/6

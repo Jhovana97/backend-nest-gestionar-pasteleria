@@ -1,0 +1,26 @@
+GET  http://localhost:3000/clientes
+
+###
+POST http://localhost:3000/clientes
+Content-Type: application/json
+
+{
+  "nombre": "Luz",
+  "telefono": "123456701",
+  "direccion": "Calle irpavi 123"
+}
+
+###
+GET http://localhost:3000/clientes/1
+
+###
+PATCH http://localhost:3000/clientes/1
+Content-Type: application/json
+
+{
+  "nombre": "Kim",
+  "direccion": "Instituto"
+}
+
+###
+DELETE http://localhost:3000/clientes/2
