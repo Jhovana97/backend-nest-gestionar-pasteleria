@@ -9,7 +9,7 @@ export class AuthController {
     // ruta login
     @Post('login')
     signIn(@Body() signInDto: Record<string, any>) {
-        return this.authService.signIn(signInDto.username, signInDto.password); //cambiaod el  username por  
+        return this.authService.signIn(signInDto.email, signInDto.password); //cambiaod el  username por  
     }
 
 }

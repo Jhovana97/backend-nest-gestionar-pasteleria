@@ -1,6 +1,7 @@
 import { Categoria } from "../../categorias/entities/categoria.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { DetallePedido } from "../../pedidos/entities/detalle_pedido.entity";
+import { DeleteDateColumn } from "typeorm";
 
 @Entity('productos')
 export class Producto {
@@ -18,9 +19,12 @@ export class Producto {
 
     @Column()
     estado: string;
-
+ 
     @Column()
     tipo: string;
+
+    //@Column({ default: 'ACTIVO' })
+    //estado: 'ACTIVO' | 'INACTIVO';
 
     @ManyToOne(() => Categoria, categoria => categoria.productos)
     @JoinColumn({ name: 'categoria_id' })
@@ -34,4 +38,7 @@ export class Producto {
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @DeleteDateColumn()
+    deletedAt: Date;
 }

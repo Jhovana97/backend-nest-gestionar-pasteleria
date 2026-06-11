@@ -11,7 +11,7 @@ export class ProductosService {
   constructor(
     @InjectRepository(Producto)
     private readonly productoRepository: Repository<Producto>,
-  ) {}
+  ) { }
 
   async create(dto: CreateProductoDto) {
     const producto = this.productoRepository.create({
@@ -25,6 +25,7 @@ export class ProductosService {
   async findAll() {
     return await this.productoRepository.find({
       relations: ['categoria', 'detalles'],
+      //withDeleted: true, para ver eliminados
     });
   }
 
@@ -56,6 +57,11 @@ export class ProductosService {
 
   async remove(id: number) {
     const producto = await this.findOne(id);
-    return await this.productoRepository.remove(producto);
+
+    await this.productoRepository.softDelete(id);
+
+    return {
+      message: 'Producto eliminado correctamente',
+    };
   }
 }

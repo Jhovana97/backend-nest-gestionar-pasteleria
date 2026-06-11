@@ -39,32 +39,36 @@ export class UserService {
     if (!user) {
       throw new NotFoundException('User not found');
     }
-
     return user;
   }
 
   async findOneByEmail(email: string) {
     const user = await this.userRepository.findOneBy({ email });
-
     if (!user) {
       throw new NotFoundException('User not found');
     }
 
     return user;
   }
-
+//dbe editarse el pathc como el postcon bcrypt para hashear la contraseña
   async update(id: number, updateUserDto: UpdateUserDto) {
+  const user = await this.findOne(id);
 
-    const user = await this.findOne(id);
-
-    if (!user) {
-      throw new NotFoundException('User not found');
-    }
-
-    Object.assign(user, updateUserDto);
-
-    return this.userRepository.save(user);
+  if (!user) {
+    throw new NotFoundException('User not found');
   }
+
+  if (updateUserDto.password) {
+    updateUserDto.password = await bcrypt.hash(
+      updateUserDto.password,
+      15,
+    );
+  }
+
+  Object.assign(user, updateUserDto);
+
+  return this.userRepository.save(user);
+}
 
   async remove(id: number) {
 

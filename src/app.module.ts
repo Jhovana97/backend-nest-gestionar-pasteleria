@@ -12,6 +12,7 @@ import { ClientesModule } from './modules/clientes/clientes.module';
 import { PedidosModule } from './modules/pedidos/pedidos.module';
 import { PagosModule } from './modules/pagos/pagos.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { LogsAccesoModule } from './modules/logs-acceso/logs-acceso.module';
 
 
 @Module({
@@ -33,6 +34,7 @@ import { AuthModule } from './modules/auth/auth.module';
     PedidosModule,
     PagosModule,
     AuthModule,
+    LogsAccesoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

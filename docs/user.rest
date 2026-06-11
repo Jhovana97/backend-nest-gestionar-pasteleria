@@ -1,14 +1,15 @@
 GET  http://localhost:3000/user
-Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTc4MTAxNjY2MCwiZXhwIjoxNzgxMDIwMjYwfQ.TvG7HFGP2DP1PKRfQ94VfDwmhOFD3qdwpDs17a6tsy8",
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTc4MTAxNjcwMywiZXhwIjoxNzgxMDIwMzAzfQ.iRYk8uMZTjtiwf6kR2NNmPolWBOe8wh9-k2vdycgq3Q
 
 ###
 POST http://localhost:3000/user
 Content-Type: application/json
+////Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTc4MTAxNjcwMywiZXhwIjoxNzgxMDIwMzAzfQ.iRYk8uMZTjtiwf6kR2NNmPolWBOe8wh9-k2vdycgq3Q
 
 {
-  "nombre": "admindasdas",
-  "email": "admindasdas@gmail.com",
-  "password": "12345678"
+  "nombre": "jhovana",
+  "email": "jhov@gmail.com",
+  "password": "AidanFive5."
 }
 
 ####
@@ -17,11 +18,12 @@ GET http://localhost:3000/user/1
 ###
 PATCH http://localhost:3000/user/2
 Content-Type: application/json
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTc4MTEzNzA0NSwiZXhwIjoxNzgxMTQwNjQ1fQ.2CbZi-zUsNCAOPVJ06fk0AznFtFIf_2j1tFEOifr5Kg
 
 {
   "nombre": "jhovana alejo",
   "email": "jhovi@gmail.com",
-  "password": "1234567810"
+  "password": "AidanFive5.."
 }
 
 ####
