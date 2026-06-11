@@ -54,7 +54,7 @@ export class ProductosService {
 
     return await this.productoRepository.save(updated);
   }
-
+//eliminacion logica con softdelete, se puede recuperar el producto eliminado con withDeleted: true en el findd
   async remove(id: number) {
     const producto = await this.findOne(id);
 
